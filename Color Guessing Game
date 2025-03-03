@@ -1,0 +1,43 @@
+<!-- Brought to you by FontasExE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Color</h1>
+    <button onclick="checkGuess('Red')" style="background-color: red; color: white;">Red</button>
+    <button onclick="checkGuess('Blue')" style="background-color: blue; color: white;">Blue</button>
+    <button onclick="checkGuess('Green')" style="background-color: green; color: white;">Green</button>
+    
+    <script>
+        let colors = ['Red', 'Blue', 'Green'];
+        let selectedColor = colors[Math.floor(Math.random() * colors.length)];
+
+        function checkGuess(choice) {
+            if (choice === selectedColor) {
+                alert("You won!");
+            } else {
+                alert("You failed!");
+            }
+            selectedColor = colors[Math.floor(Math.random() * colors.length)]; // Pick new color
+        }
+    </script>
+</body>
+</html>
